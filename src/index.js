@@ -90,13 +90,23 @@ export default class Form extends Component {
         };
     }
 
+    handleSubmit(event) {
+        event.preventDefault();
+
+        if (this.state.errors.length === 0 && this.props.synchronous) {
+            this.refs.form.submit();
+        }
+    }
+
     render() {
         return (
             <form
                 className="Form"
                 ref="form"
+                method={this.props.method}
                 noValidate={this.props.noValidate}
-                onSubmit={event => event.preventDefault()}
+                autoComplete={this.props.autoComplete ? 'on' : 'off'}
+                onSubmit={event => this.handleSubmit(event)}
             >
                 {this.props.children}
             </form>
@@ -105,7 +115,10 @@ export default class Form extends Component {
 }
 
 Form.defaultProps = {
-    noValidate: false
+    noValidate: false,
+    autoComplete: true,
+    synchronous: false,
+    method: 'GET'
 };
 
 Form.propTypes = {
@@ -113,7 +126,8 @@ Form.propTypes = {
     rules: PropTypes.object,
     onSubmit: PropTypes.func,
     action: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-    noValidate: PropTypes.bool
+    noValidate: PropTypes.bool,
+    autoComplete: PropTypes.bool
 };
 
 Form.childContextTypes = {

@@ -4,7 +4,8 @@ const examples = [
     'basic',
     'label',
     'group',
-    'error'
+    'error',
+    'advanced'
 ];
 
 examples.map(example => {
