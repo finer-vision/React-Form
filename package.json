@@ -1,8 +1,12 @@
 {
   "name": "fv-react-form",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Flexible React form with validation.",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finer-vision/React-Form"
+  },
   "scripts": {
     "dev-examples": "node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build-examples": "node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
