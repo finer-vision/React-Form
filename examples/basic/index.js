@@ -19,7 +19,7 @@ class Basic extends Component {
                 onSubmit={form => console.log(form)}
             >
                 <Form.Errors/>
-                <Form.Input type="name" name="name" placeholder="Name"/>
+                <Form.Input type="text" name="name" placeholder="Name"/>
                 <Form.Button type="submit">Submit</Form.Button>
             </Form>
         );
