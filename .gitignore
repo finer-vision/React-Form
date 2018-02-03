@@ -1,4 +1,6 @@
 .idea/
 node_modules/
-mix-manifest.json
 examples/build
+.DS_Store
+mix-manifest.json
+*.log
