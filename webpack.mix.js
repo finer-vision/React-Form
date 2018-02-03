@@ -5,7 +5,8 @@ const examples = [
     'label',
     'group',
     'error',
-    'advanced'
+    'advanced',
+    'custom_checkbox'
 ];
 
 examples.map(example => {
