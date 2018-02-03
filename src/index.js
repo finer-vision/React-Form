@@ -92,18 +92,28 @@ export default class Form extends Component {
 
     render() {
         return (
-            <form className="Form" ref="form" onSubmit={event => event.preventDefault()}>
+            <form
+                className="Form"
+                ref="form"
+                noValidate={this.props.noValidate}
+                onSubmit={event => event.preventDefault()}
+            >
                 {this.props.children}
             </form>
         );
     }
 }
 
+Form.defaultProps = {
+    noValidate: false
+};
+
 Form.propTypes = {
     name: PropTypes.string,
     rules: PropTypes.object,
     onSubmit: PropTypes.func,
     action: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+    noValidate: PropTypes.bool
 };
 
 Form.childContextTypes = {
