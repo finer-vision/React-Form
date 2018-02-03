@@ -46,6 +46,7 @@ export default class Form extends Component {
     submit() {
         const form = {
             name: this.props.name,
+            id: this.ID,
             fields: this.state.fields,
             validation: this.validation,
         };

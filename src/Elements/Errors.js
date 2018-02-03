@@ -14,6 +14,10 @@ export default class Errors extends Component {
         };
 
         const formSubmitListener = Event.addListener('form.submit', form => {
+            if (form.id !== this.form.id) {
+                return;
+            }
+
             this.setState({errors: form.validation.errors});
         });
 
