@@ -9,7 +9,6 @@ export default class Error extends Component {
 
         this.form = context.form;
         this.listeners = [];
-
         this.state = {
             error: null
         };

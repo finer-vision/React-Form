@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 export default class Label extends Component {
     constructor(props, context) {
         super(props, context);
+        
         this.form = context.form;
     }
 

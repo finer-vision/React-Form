@@ -7,7 +7,6 @@ export default class Checkbox extends Field {
         super(props, context);
 
         this.form = context.form;
-
         this.state = {
             checked: this.props.checked
         };

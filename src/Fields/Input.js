@@ -5,8 +5,8 @@ import Field from "./Field";
 export default class Input extends Field {
     constructor(props, context) {
         super(props, context);
-        this.form = context.form;
 
+        this.form = context.form;
         this.state = {
             value: this.props.value
         };
