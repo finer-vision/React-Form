@@ -9,21 +9,19 @@ class Basic extends Component {
 
     render() {
         return (
-            <div>
-                <Form
-                    action={form => console.log(form)}
-                    method="POST"
-                    name="login"
-                    rules={{
-                        name: 'required'
-                    }}
-                    onSubmit={form => console.log(form)}
-                >
-                    <Form.Errors/>
-                    <Form.Input type="name" name="name" placeholder="Name"/>
-                    <Form.Button type="submit">Submit</Form.Button>
-                </Form>
-            </div>
+            <Form
+                action={form => console.log(form)}
+                method="POST"
+                name="login"
+                rules={{
+                    name: 'required'
+                }}
+                onSubmit={form => console.log(form)}
+            >
+                <Form.Errors/>
+                <Form.Input type="name" name="name" placeholder="Name"/>
+                <Form.Button type="submit">Submit</Form.Button>
+            </Form>
         );
     }
 }
