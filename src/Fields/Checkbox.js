@@ -17,6 +17,11 @@ export default class Checkbox extends Field {
 
     handleChange() {
         const checked = !this.state.checked;
+
+        if (this.props.onChange) {
+            this.props.onChange(checked);
+        }
+
         this.setState({checked}, () => this.updateField());
     }
 
