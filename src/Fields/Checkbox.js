@@ -6,7 +6,6 @@ export default class Checkbox extends Field {
     constructor(props, context) {
         super(props, context);
 
-        this.form = context.form;
         this.state = {
             checked: this.props.checked
         };
@@ -45,8 +44,4 @@ Checkbox.propTypes = {
     checked: PropTypes.bool,
     className: PropTypes.string,
     name: PropTypes.string.isRequired
-};
-
-Checkbox.contextTypes = {
-    form: PropTypes.object.isRequired
 };

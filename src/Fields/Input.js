@@ -6,7 +6,6 @@ export default class Input extends Field {
     constructor(props, context) {
         super(props, context);
 
-        this.form = context.form;
         this.state = {
             value: this.props.value
         };
@@ -51,8 +50,4 @@ Input.propTypes = {
     placeholder: PropTypes.string,
     autoFocus: PropTypes.bool,
     name: PropTypes.string.isRequired
-};
-
-Input.contextTypes = {
-    form: PropTypes.object.isRequired
 };

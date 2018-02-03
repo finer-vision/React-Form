@@ -1,15 +1,18 @@
 import {Component} from "react";
 import Event from "fv-event";
 import Util from "../Util";
+import Input from "./Input";
+import PropTypes from "prop-types";
 
 export default class Field extends Component {
-    constructor(props) {
-        super(props);
+    constructor(props, context) {
+        super(props, context);
 
+        this.form = context.form;
         this.listeners = [];
 
         const fieldChangeListener = Event.addListener('field.change', field => {
-            if (field.name === this.props.name && field.type === 'checkbox') {
+            if (field.name === this.props.name && field.type === 'checkbox' && field.formId === this.form.id) {
                 this.setState({checked: field.checked});
             }
         });
@@ -24,7 +27,8 @@ export default class Field extends Component {
     updateField() {
         const field = {
             name: this.props.name,
-            type: this.props.type
+            type: this.props.type,
+            formId: this.form.id
         };
 
         switch (field.type) {
@@ -39,3 +43,7 @@ export default class Field extends Component {
         this.form.handleChange(field);
     }
 }
+
+Field.contextTypes = {
+    form: PropTypes.object.isRequired
+};
