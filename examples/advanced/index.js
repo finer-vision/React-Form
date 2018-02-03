@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {render} from "react-dom";
-import Form from "../../src/index";
+import Form from "../../src/Form/index";
 
 class Advanced extends Component {
     constructor(props) {
