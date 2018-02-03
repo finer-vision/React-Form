@@ -1,0 +1,25 @@
+{
+  "name": "fv-react-form",
+  "version": "0.0.1",
+  "description": "Flexible React form with validation.",
+  "main": "src/index.js",
+  "scripts": {
+    "examples-dev": "node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "examples": "node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["react", "form", "fv", "finer", "vision"],
+  "author": "Finer Vision",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "laravel-mix": "^2.0.0",
+    "prop-types": "^15.6.0"
+  },
+  "dependencies": {
+    "fv-event": "^1.0.2",
+    "fv-validation": "^1.1.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
