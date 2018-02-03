@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {render} from "react-dom";
 import Form from "../../src/index";
 
-class Basic extends Component {
+class Label extends Component {
     constructor(props) {
         super(props);
     }
@@ -27,4 +27,4 @@ class Basic extends Component {
     }
 }
 
-render(<Basic/>, document.querySelector('#root'));
+render(<Label/>, document.querySelector('#root'));

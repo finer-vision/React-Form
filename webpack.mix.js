@@ -1,4 +1,4 @@
 const mix = require('laravel-mix');
 
 mix.react('examples/basic/index.js', 'examples/build/basic.js');
-mix.react('examples/labels/index.js', 'examples/build/labels.js');
+mix.react('examples/label/index.js', 'examples/build/label.js');
