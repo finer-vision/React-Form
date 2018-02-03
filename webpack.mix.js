@@ -3,7 +3,8 @@ const mix = require('laravel-mix');
 const examples = [
     'basic',
     'label',
-    'group'
+    'group',
+    'error'
 ];
 
 examples.map(example => {
