@@ -60,7 +60,7 @@ All contributions are welcome. Before starting work on your contribution, please
 no one else is working on the same contribution as you. To develop examples, run this command.
 
 ```bash
-npm run build-examples
+npm run dev-examples
 ```
 
 If you add a new example, make sure to update the compiler file webpack.mix.js with your new example file.
