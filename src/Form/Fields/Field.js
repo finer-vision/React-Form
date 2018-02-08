@@ -1,7 +1,6 @@
 import {Component} from "react";
 import Event from "fv-event";
 import Util from "../Util";
-import Input from "./Input";
 import PropTypes from "prop-types";
 
 export default class Field extends Component {
@@ -41,8 +40,16 @@ export default class Field extends Component {
         }
 
         this.form.handleChange(field);
+
+        if (this.props.onChange) {
+            this.props.onChange(field);
+        }
     }
 }
+
+Field.propTypes = {
+    onChange: PropTypes.func
+};
 
 Field.contextTypes = {
     form: PropTypes.object.isRequired
