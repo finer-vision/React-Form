@@ -29,7 +29,6 @@ export default class Input extends Field {
                 {...this.props}
                 value={this.state.value}
                 id={`${this.form.id}-${this.props.name}`}
-                placeholder={this.props.placeholder}
                 onChange={event => this.handleChange(event)}
             />
         );
