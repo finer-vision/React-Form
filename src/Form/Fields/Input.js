@@ -23,10 +23,10 @@ export default class Input extends Field {
     render() {
         return (
             <input
-                autoFocus={this.props.autoFocus}
                 className={`Form__input ${this.props.className}`}
                 type={this.props.type}
                 name={this.props.name}
+                {...this.props}
                 value={this.state.value}
                 id={`${this.form.id}-${this.props.name}`}
                 placeholder={this.props.placeholder}
@@ -39,15 +39,11 @@ export default class Input extends Field {
 Input.defaultProps = {
     type: 'text',
     value: '',
-    className: '',
-    placeholder: '',
-    autoFocus: false
+    className: ''
 };
 
 Input.propTypes = {
     type: PropTypes.string,
     className: PropTypes.string,
-    placeholder: PropTypes.string,
-    autoFocus: PropTypes.bool,
     name: PropTypes.string.isRequired
 };
