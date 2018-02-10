@@ -29,9 +29,10 @@ export default class Checkbox extends Field {
         return (
             <input
                 className={`Form__checkbox ${this.props.className}`}
-                type={this.props.type}
-                checked={this.state.checked}
+                type="checkbox"
                 name={this.props.name}
+                {...this.props}
+                checked={this.state.checked}
                 id={`${this.form.id}-${this.props.name}`}
                 onChange={() => this.handleChange()}
             />
@@ -40,7 +41,6 @@ export default class Checkbox extends Field {
 }
 
 Checkbox.defaultProps = {
-    type: 'checkbox',
     checked: false,
     className: ''
 };
