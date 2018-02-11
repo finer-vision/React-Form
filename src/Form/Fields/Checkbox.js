@@ -42,12 +42,14 @@ export default class Checkbox extends Field {
 
 Checkbox.defaultProps = {
     checked: false,
-    className: ''
+    className: '',
+    type: 'checkbox'
 };
 
 Checkbox.propTypes = {
     checked: PropTypes.bool,
     className: PropTypes.string,
     onChange: PropTypes.func,
+    type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
 };
