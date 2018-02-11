@@ -13,7 +13,11 @@ class AdvancedControl extends Component {
 
     submitForm() {
         this.refs.form.submit();
-        this.setState({errors: this.refs.form.getErrors()});
+        const errors = this.refs.form.getErrors();
+
+        console.log(this.refs.form.getData());
+
+        this.setState({errors});
     }
 
     render() {
