@@ -16,9 +16,7 @@ export default class Form extends Component {
         super(props);
 
         this.validation = new Validation();
-
         this.ID = Util.guid();
-
         this.state = {
             errors: [],
             fields: {}
@@ -41,6 +39,13 @@ export default class Form extends Component {
 
         Event.emit('field.change', field);
         Event.emit('form.change', {name: this.props.name, fields});
+    }
+
+    getErrors(field = null) {
+        if (field !== null) {
+            return this.validation.getErrors(field);
+        }
+        return this.validation.errors;
     }
 
     submit() {
