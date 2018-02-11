@@ -8,7 +8,7 @@ export default class Group extends Component {
 
     render() {
         return (
-            <div className={`Form__group ${this.props.className}`}>
+            <div className={`Form__group ${this.props.className}`} style={this.props.style}>
                 {this.props.children}
             </div>
         );
@@ -16,9 +16,11 @@ export default class Group extends Component {
 }
 
 Group.defaultProps = {
-    className: ''
+    className: '',
+    style: {}
 };
 
 Group.propTypes = {
-    className: PropTypes.string.isRequired
+    className: PropTypes.string,
+    style: PropTypes.object
 };

@@ -11,7 +11,7 @@
     "dev-examples": "node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build-examples": "node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "node_modules/babel-cli/bin/babel.js src/ -d build"
+    "prepublishOnly": "node_modules/babel-cli/bin/babel.js src/ -d build"
   },
   "keywords": [
     "react",
