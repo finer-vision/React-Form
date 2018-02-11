@@ -6,7 +6,8 @@ const examples = [
     'group',
     'error',
     'advanced',
-    'custom_checkbox'
+    'custom_checkbox',
+    'advanced_control'
 ];
 
 examples.map(example => {
