@@ -48,6 +48,13 @@ export default class Form extends Component {
         return this.validation.errors;
     }
 
+    getData(field = null) {
+        if (field !== null) {
+            return this.state.fields[field];
+        }
+        return this.state.fields;
+    }
+
     submit() {
         const form = {
             name: this.props.name,
