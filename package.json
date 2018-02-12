@@ -1,6 +1,6 @@
 {
   "name": "fv-react-form",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Flexible React form with validation.",
   "main": "build/index.js",
   "repository": {
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "fv-event": "^1.0.2",
-    "fv-validation": "^1.1.9"
+    "fv-validation": "^1.1.10"
   },
   "peerDependencies": {
     "react": "^16.2.0",
