@@ -5,6 +5,7 @@ import Event from "fv-event";
 import Util from "./Util";
 import Input from "./Fields/Input";
 import Checkbox from "./Fields/Checkbox";
+import Select from "./Fields/Select";
 import Button from "./Elements/Button";
 import Label from "./Elements/Label";
 import Group from "./Elements/Group";
@@ -148,6 +149,7 @@ Form.childContextTypes = {
 };
 
 Form.Input = Input;
+Form.Select = Select;
 Form.Button = Button;
 Form.Checkbox = Checkbox;
 Form.Label = Label;
