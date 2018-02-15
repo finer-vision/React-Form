@@ -7,7 +7,8 @@ const examples = [
     'error',
     'advanced',
     'custom_checkbox',
-    'advanced_control'
+    'advanced_control',
+    'select'
 ];
 
 examples.map(example => {
