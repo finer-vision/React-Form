@@ -31,8 +31,8 @@ class AdvancedControl extends Component {
                     method="POST"
                     name="login"
                     rules={{
-                        name: 'required,max:255',
-                        email: 'required,max:255,email'
+                        name: 'required|max:255',
+                        email: 'required|max:255|email'
                     }}
                     noValidate={true}
                     autoComplete={false}

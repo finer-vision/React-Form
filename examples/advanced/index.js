@@ -15,8 +15,8 @@ class Advanced extends Component {
                     method="POST"
                     name="login"
                     rules={{
-                        name: 'required,max:255',
-                        email: 'required,max:255,email'
+                        name: 'required|max:255',
+                        email: 'required|max:255|email'
                     }}
                     noValidate={true}
                     autoComplete={false}
@@ -49,8 +49,8 @@ class Advanced extends Component {
                     method="POST"
                     name="test"
                     rules={{
-                        name: 'required,max:255',
-                        email: 'required,max:255,email'
+                        name: 'required|max:255',
+                        email: 'required|max:255|email'
                     }}
                     noValidate={true}
                     autoComplete={false}

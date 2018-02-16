@@ -15,13 +15,13 @@ class Select extends Component {
                     method="POST"
                     name="login"
                     rules={{
-                        name: 'required,max:255',
-                        email: 'required,max:255,email',
-                        country: 'in:5|6|7'
+                        name: 'required|max:255',
+                        email: 'required|max:255,email',
+                        country: 'in:5,6,7'
                     }}
                     noValidate={true}
                     autoComplete={false}
-                    synchronous={true}
+                    synchronous={false}
                 >
                     <Form.Group>
                         <Form.Label field="name">Name</Form.Label>
