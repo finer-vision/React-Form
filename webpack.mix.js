@@ -8,7 +8,8 @@ const examples = [
     'advanced',
     'custom_checkbox',
     'advanced_control',
-    'select'
+    'select',
+    'radio'
 ];
 
 examples.map(example => {

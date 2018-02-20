@@ -7,8 +7,15 @@ export default class Input extends Field {
         super(props, context);
 
         this.state = {
-            value: this.props.value
+            value: this.getValue()
         };
+    }
+
+    getValue() {
+        if (this.props.type === 'radio' && !this.props.checked) {
+            return '';
+        }
+        return this.props.value;
     }
 
     componentDidMount() {
@@ -16,7 +23,12 @@ export default class Input extends Field {
     }
 
     handleChange(event) {
-        const value = event.target.value;
+        let value = event.target.value;
+
+        if (this.props.type === 'radio') {
+            value = this.props.value;
+        }
+
         this.setState({value}, () => this.updateField());
     }
 

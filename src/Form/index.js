@@ -27,13 +27,10 @@ export default class Form extends Component {
     handleFieldChange(field) {
         const {fields} = this.state;
 
-        switch (field.type) {
-            case 'checkbox':
-                fields[field.name] = field.checked;
-                break;
-            default:
-                fields[field.name] = field.value;
-                break;
+        if (field.type === 'checkbox') {
+            fields[field.name] = field.checked;
+        } else {
+            fields[field.name] = field.value;
         }
 
         this.setState({fields});

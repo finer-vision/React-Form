@@ -9,8 +9,16 @@ export default class Label extends Component {
     }
 
     render() {
+        const props = {
+            className: `Form__label ${this.props.className}`
+        };
+
+        if (this.props.children.length === 0) {
+            props.htmlFor = `${this.form.id}-${this.props.field}`;
+        }
+
         return (
-            <label className={`Form__label ${this.props.className}`} htmlFor={`${this.form.id}-${this.props.field}`}>
+            <label {...props}>
                 {this.props.children}
             </label>
         );
