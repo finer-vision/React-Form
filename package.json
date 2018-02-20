@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "fv-event": "^1.0.4",
-    "fv-validation": "^2.0.2"
+    "fv-validation": "^2.0.4"
   },
   "peerDependencies": {
     "react": "^16.2.0",
