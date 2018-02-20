@@ -112,7 +112,7 @@ export default class Form extends Component {
     render() {
         return (
             <form
-                className="Form"
+                className={`Form ${this.props.className}`}
                 ref="form"
                 method={this.props.method}
                 noValidate={this.props.noValidate}
@@ -129,7 +129,8 @@ Form.defaultProps = {
     noValidate: false,
     autoComplete: true,
     synchronous: false,
-    method: 'GET'
+    method: 'GET',
+    className: ''
 };
 
 Form.propTypes = {
@@ -139,7 +140,8 @@ Form.propTypes = {
     onSubmit: PropTypes.func,
     action: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     noValidate: PropTypes.bool,
-    autoComplete: PropTypes.bool
+    autoComplete: PropTypes.bool,
+    className: PropTypes.string
 };
 
 Form.childContextTypes = {
