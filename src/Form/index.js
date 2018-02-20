@@ -62,7 +62,7 @@ export default class Form extends Component {
         };
 
         if (this.props.rules) {
-            this.validation.validate(this.state.fields, this.props.rules);
+            this.validation.validate(this.state.fields, this.props.rules, this.props.messages);
             const errors = this.validation.getErrors();
             form.errors = errors;
 
@@ -135,6 +135,7 @@ Form.defaultProps = {
 Form.propTypes = {
     name: PropTypes.string,
     rules: PropTypes.object,
+    messages: PropTypes.object,
     onSubmit: PropTypes.func,
     action: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     noValidate: PropTypes.bool,

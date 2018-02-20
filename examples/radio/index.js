@@ -17,6 +17,9 @@ class Radio extends Component {
                     rules={{
                         status: 'required'
                     }}
+                    messages={{
+                        status: 'Error!'
+                    }}
                     noValidate={true}
                     autoComplete={false}
                     synchronous={false}
