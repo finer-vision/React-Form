@@ -15,63 +15,52 @@ class Advanced extends Component {
                     method="POST"
                     name="login"
                     rules={{
-                        name: 'required|max:255',
-                        email: 'required|max:255|email'
+                        risk: 'required|in:high|max:255',
+                        email: 'required|max:255|email',
+                        remember: 'checked',
+                        okay: 'checked'
                     }}
                     noValidate={true}
                     autoComplete={false}
-                    synchronous={true}
                 >
+                    <Form.Errors/>
+
                     <Form.Group>
-                        <Form.Label field="name">Name</Form.Label>
-                        <Form.Input type="text" name="name"/>
-                        <Form.Error field="name"/>
+                        <Form.Label>
+                            <Form.Input type="radio" name="risk" value="high"/> High
+                        </Form.Label>
+                        <br/>
+                        <Form.Label>
+                            <Form.Input type="radio" name="risk" value="medium"/> Medium
+                        </Form.Label>
+                        <br/>
+                        <Form.Label>
+                            <Form.Input type="radio" name="risk" value="low"/> Low
+                        </Form.Label>
                     </Form.Group>
+
+                    <br/>
 
                     <Form.Group>
                         <Form.Label field="email">Email Address</Form.Label>
                         <Form.Input type="email" name="email"/>
-                        <Form.Error field="email"/>
                     </Form.Group>
+
+                    <br/>
 
                     <Form.Group>
                         <Form.Label field="remember">Remember Me</Form.Label>
                         <Form.Checkbox name="remember"/>
                     </Form.Group>
 
-                    <Form.Button type="submit">Submit</Form.Button>
-                </Form>
-
-                <br/>
-
-                <Form
-                    action="./"
-                    method="POST"
-                    name="test"
-                    rules={{
-                        name: 'required|max:255',
-                        email: 'required|max:255|email'
-                    }}
-                    noValidate={true}
-                    autoComplete={false}
-                    synchronous={true}
-                >
-                    <Form.Group>
-                        <Form.Label field="name">Name</Form.Label>
-                        <Form.Input type="text" name="name"/>
-                        <Form.Error field="name"/>
-                    </Form.Group>
+                    <br/>
 
                     <Form.Group>
-                        <Form.Label field="email">Email Address</Form.Label>
-                        <Form.Input type="email" name="email"/>
-                        <Form.Error field="email"/>
+                        <Form.Label field="okay">Okay</Form.Label>
+                        <Form.Input type="checkbox" name="okay"/>
                     </Form.Group>
 
-                    <Form.Group>
-                        <Form.Label field="remember">Remember Me</Form.Label>
-                        <Form.Checkbox name="remember"/>
-                    </Form.Group>
+                    <br/>
 
                     <Form.Button type="submit">Submit</Form.Button>
                 </Form>
