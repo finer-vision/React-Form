@@ -33,7 +33,7 @@
     "react-dom": "^16.2.0"
   },
   "dependencies": {
-    "fv-event": "^1.0.2",
+    "fv-event": "^1.0.4",
     "fv-validation": "^2.0.2"
   },
   "peerDependencies": {
