@@ -13,7 +13,7 @@ export default class Label extends Component {
             className: `Form__label ${this.props.className}`
         };
 
-        if (this.props.children.length === 0) {
+        if (this.props.hasOwnProperty('field')) {
             props.htmlFor = `${this.form.id}-${this.props.field}`;
         }
 
