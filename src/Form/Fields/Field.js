@@ -30,14 +30,11 @@ export default class Field extends Component {
             formId: this.form.id
         };
 
-        switch (field.type) {
-            case 'checkbox':
-                field.checked = this.state.checked;
-                break;
-            default:
-                field.value = this.state.value;
-                break;
+        if (field.type === 'checkbox' || field.type === 'radio') {
+            field.checked = this.state.checked;
         }
+
+        field.value = this.state.value;
 
         this.form.handleChange(field);
 

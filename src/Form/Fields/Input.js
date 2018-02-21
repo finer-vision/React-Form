@@ -33,12 +33,22 @@ export default class Input extends Field {
     }
 
     render() {
+        const props = Object.assign({}, this.props);
+        delete props.type;
+        delete props.name;
+        delete props.className;
+        delete props.checked;
+
+        if (this.props.type === 'radio') {
+            props.checked = this.props.checkbox;
+        }
+
         return (
             <input
                 className={`Form__input ${this.props.className}`}
                 type={this.props.type}
                 name={this.props.name}
-                {...this.props}
+                {...props}
                 value={this.state.value}
                 id={`${this.form.id}-${this.props.name}`}
                 onChange={event => this.handleChange(event)}
@@ -50,6 +60,7 @@ export default class Input extends Field {
 Input.defaultProps = {
     type: 'text',
     value: '',
+    checked: false,
     className: ''
 };
 
