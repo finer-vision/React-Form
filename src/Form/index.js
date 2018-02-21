@@ -36,6 +36,10 @@ export default class Form extends Component {
 
         this.setState({fields});
 
+        if (this.props.onChange) {
+            this.props.onChange(this.state.fields);
+        }
+
         Event.emit('field.change', field);
         Event.emit('form.change', {name: this.props.name, fields});
     }
@@ -139,10 +143,11 @@ Form.propTypes = {
     rules: PropTypes.object,
     messages: PropTypes.object,
     onSubmit: PropTypes.func,
+    onChange: PropTypes.func,
     action: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     noValidate: PropTypes.bool,
     autoComplete: PropTypes.bool,
-    className: PropTypes.string
+    className: PropTypes.string,
 };
 
 Form.childContextTypes = {
