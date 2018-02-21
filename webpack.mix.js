@@ -9,7 +9,8 @@ const examples = [
     'custom_checkbox',
     'advanced_control',
     'select',
-    'radio'
+    'radio',
+    'textarea'
 ];
 
 examples.map(example => {
