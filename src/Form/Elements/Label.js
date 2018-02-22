@@ -14,7 +14,7 @@ export default class Label extends Component {
         };
 
         if (this.props.hasOwnProperty('field')) {
-            props.htmlFor = `${this.form.id}-${this.props.field}`;
+            props.htmlFor = `field-${this.form.id}-${this.props.field}`;
         }
 
         return (

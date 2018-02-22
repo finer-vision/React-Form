@@ -37,7 +37,7 @@ export default class Select extends Field {
                 name={this.props.name}
                 {...this.props}
                 value={this.state.value}
-                id={`${this.form.id}-${this.props.name}`}
+                id={`field-${this.form.id}-${this.props.name}`}
                 onChange={event => this.handleChange(event)}
             >
                 {this.renderOptions()}

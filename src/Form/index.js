@@ -18,7 +18,7 @@ export default class Form extends Component {
         super(props);
 
         this.validation = new Validation();
-        this.ID = Util.guid();
+        this.ID = `form-${Util.guid()}`;
         this.state = {
             errors: [],
             fields: {}
@@ -28,9 +28,11 @@ export default class Form extends Component {
     handleFieldChange(field) {
         const {fields} = this.state;
 
-        if (field.type === 'checkbox') {
+        if (['checkbox', 'radio'].indexOf(field.type) > -1) {
             fields[field.name] = field.checked;
-        } else {
+        }
+
+        if (field.type !== 'checkbox') {
             fields[field.name] = field.value;
         }
 
@@ -101,7 +103,8 @@ export default class Form extends Component {
             form: {
                 handleChange: this.handleFieldChange.bind(this),
                 submit: this.submit.bind(this),
-                id: this.ID
+                id: this.ID,
+                getData: this.getData.bind(this)
             }
         };
     }

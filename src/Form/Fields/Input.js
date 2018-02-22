@@ -12,7 +12,7 @@ export default class Input extends Field {
     }
 
     getValue() {
-        if (this.props.type === 'radio' && !this.props.checked) {
+        if (this.props.type === 'radio' && !this.props.defaultChecked) {
             return '';
         }
         return this.props.value;
@@ -37,11 +37,6 @@ export default class Input extends Field {
         delete props.type;
         delete props.name;
         delete props.className;
-        delete props.checked;
-
-        if (this.props.type === 'radio') {
-            props.checked = this.props.checkbox;
-        }
 
         return (
             <input
@@ -50,7 +45,7 @@ export default class Input extends Field {
                 name={this.props.name}
                 {...props}
                 value={this.state.value}
-                id={`${this.form.id}-${this.props.name}`}
+                id={`field-${this.form.id}-${this.props.name}`}
                 onChange={event => this.handleChange(event)}
             />
         );
@@ -60,7 +55,7 @@ export default class Input extends Field {
 Input.defaultProps = {
     type: 'text',
     value: '',
-    checked: false,
+    defaultChecked: false,
     className: ''
 };
 

@@ -33,7 +33,7 @@ export default class Checkbox extends Field {
                 name={this.props.name}
                 {...this.props}
                 checked={this.state.checked}
-                id={`${this.form.id}-${this.props.name}`}
+                id={`field-${this.form.id}-${this.props.name}`}
                 onChange={() => this.handleChange()}
             />
         );

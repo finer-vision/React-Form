@@ -34,7 +34,7 @@ export default class Textarea extends Field {
                 name={this.props.name}
                 {...this.props}
                 value={this.getValue()}
-                id={`${this.form.id}-${this.props.name}`}
+                id={`field-${this.form.id}-${this.props.name}`}
                 onChange={event => this.handleChange(event)}
             />
         );

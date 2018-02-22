@@ -15,15 +15,13 @@ class Radio extends Component {
                     method="POST"
                     name="login"
                     rules={{
-                        status: 'required'
-                    }}
-                    messages={{
-                        status: 'Error!'
+                        status: 'required',
+                        name: 'required'
                     }}
                     noValidate={true}
                     autoComplete={false}
                     synchronous={false}
-                    onSubmit={form => console.log(form)}
+                    onSubmit={form => console.log(form.fields)}
                 >
                     <Form.Errors/>
 
@@ -48,7 +46,14 @@ class Radio extends Component {
                         </Form.Label>
                     </Form.Group>
 
-                    <Form.Button type="submit">Submit</Form.Button>
+                    <Form.Group>
+                        <Form.Label field="name">Name</Form.Label>
+                        <Form.Input name="name"/>
+                    </Form.Group>
+
+                    <Form.Group>
+                        <Form.Button type="submit">Submit</Form.Button>
+                    </Form.Group>
                 </Form>
             </div>
         );
