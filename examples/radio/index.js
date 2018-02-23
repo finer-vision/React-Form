@@ -22,27 +22,30 @@ class Radio extends Component {
                     autoComplete={false}
                     synchronous={false}
                     onSubmit={form => console.log(form.fields)}
+                    onChange={fields => {
+                        console.log(fields);
+                    }}
                 >
                     <Form.Errors/>
 
                     <Form.Group>
                         <Form.Label>
                             Live
-                            <Form.Input type="radio" name="status" value="live"/>
+                            <Form.Input type="radio" name="status" value="live" defaultChecked={true}/>
                         </Form.Label>
 
                         <br/>
 
                         <Form.Label>
                             Down
-                            <Form.Input type="radio" name="status" value="down"/>
+                            <Form.Input type="radio" name="status" value="down" defaultChecked={false}/>
                         </Form.Label>
 
                         <br/>
 
                         <Form.Label>
                             Unknown
-                            <Form.Input type="radio" name="status" value="unknown"/>
+                            <Form.Input type="radio" name="status" value="unknown" defaultChecked={false}/>
                         </Form.Label>
                     </Form.Group>
 
