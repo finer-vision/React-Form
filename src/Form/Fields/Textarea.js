@@ -29,7 +29,6 @@ export default class Textarea extends Field {
     render() {
         return (
             <textarea
-                autoFocus={true}
                 className={`Form__input ${this.props.className}`}
                 name={this.props.name}
                 {...this.props}
