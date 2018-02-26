@@ -42,7 +42,7 @@ export default class Field extends Component {
             field.checked = this.state.checked;
         }
 
-        if (field.type === 'files') {
+        if (field.type === 'file') {
             field.files = this.state.files;
         }
 
