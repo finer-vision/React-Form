@@ -7,7 +7,8 @@ export default class Input extends Field {
         super(props, context);
 
         this.state = {
-            value: this.getValue()
+            value: this.getValue(),
+            files: []
         };
     }
 
@@ -24,12 +25,17 @@ export default class Input extends Field {
 
     handleChange(event) {
         let value = event.target.value;
+        let files = [];
 
         if (this.props.type === 'radio') {
             value = this.props.value;
         }
 
-        this.setState({value}, () => this.updateField());
+        if (this.props.type === 'file') {
+            files = event.target.files;
+        }
+
+        this.setState({value, files}, () => this.updateField());
     }
 
     render() {

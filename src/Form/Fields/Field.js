@@ -42,6 +42,10 @@ export default class Field extends Component {
             field.checked = this.state.checked;
         }
 
+        if (field.type === 'files') {
+            field.files = this.state.files;
+        }
+
         // Handle updating of radio fields that have the same name.
         // TODO: Add tests and refactor.
         if (field.type === 'radio') {
