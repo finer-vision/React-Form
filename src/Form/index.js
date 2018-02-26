@@ -166,3 +166,4 @@ Form.Label = Label;
 Form.Group = Group;
 Form.Error = Error;
 Form.Errors = Errors;
+Form.Validation = Validation;
