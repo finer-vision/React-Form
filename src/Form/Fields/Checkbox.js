@@ -28,6 +28,7 @@ export default class Checkbox extends Field {
     render() {
         return (
             <input
+                ref="field"
                 className={`Form__checkbox ${this.props.className}`}
                 type="checkbox"
                 name={this.props.name}

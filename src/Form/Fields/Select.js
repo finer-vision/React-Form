@@ -33,6 +33,7 @@ export default class Select extends Field {
     render() {
         return (
             <select
+                ref="field"
                 className={`Form__input ${this.props.className}`}
                 name={this.props.name}
                 {...this.props}

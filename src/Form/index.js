@@ -3,15 +3,6 @@ import PropTypes from "prop-types";
 import Validation from "fv-validation";
 import Event from "fv-event";
 import Util from "./Util";
-import Input from "./Fields/Input";
-import Checkbox from "./Fields/Checkbox";
-import Textarea from "./Fields/Textarea";
-import Select from "./Fields/Select";
-import Button from "./Elements/Button";
-import Label from "./Elements/Label";
-import Group from "./Elements/Group";
-import Error from "./Elements/Error";
-import Errors from "./Elements/Errors";
 
 export default class Form extends Component {
     constructor(props) {
@@ -23,6 +14,12 @@ export default class Form extends Component {
             errors: [],
             fields: {}
         };
+    }
+
+    reset() {
+        if (this.props.reset) {
+            this.props.reset();
+        }
     }
 
     handleFieldChange(field) {
@@ -64,13 +61,18 @@ export default class Form extends Component {
         return this.state.fields;
     }
 
-    submit() {
-        const form = {
+    getForm() {
+        return {
             name: this.props.name,
             id: this.ID,
             fields: this.state.fields,
             validation: this.validation,
+            errors: this.state.errors
         };
+    }
+
+    submit() {
+        const form = this.getForm();
 
         if (this.props.rules) {
             this.validation.validate(this.state.fields, this.props.rules, this.props.messages);
@@ -97,7 +99,7 @@ export default class Form extends Component {
             }
 
             if (this.props.action && typeof this.props.action === 'string') {
-                console.log('TODO: submit form functionality');
+                this.refs.form.submit();
             }
         });
     }
@@ -155,19 +157,9 @@ Form.propTypes = {
     noValidate: PropTypes.bool,
     autoComplete: PropTypes.bool,
     className: PropTypes.string,
+    reset: PropTypes.func,
 };
 
 Form.childContextTypes = {
     form: PropTypes.object.isRequired
 };
-
-Form.Input = Input;
-Form.Select = Select;
-Form.Button = Button;
-Form.Checkbox = Checkbox;
-Form.Textarea = Textarea;
-Form.Label = Label;
-Form.Group = Group;
-Form.Error = Error;
-Form.Errors = Errors;
-Form.Validation = Validation;

@@ -46,6 +46,7 @@ export default class Input extends Field {
 
         return (
             <input
+                ref="field"
                 className={`Form__input ${this.props.className}`}
                 type={this.props.type}
                 name={this.props.name}

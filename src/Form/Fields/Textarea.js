@@ -29,6 +29,7 @@ export default class Textarea extends Field {
     render() {
         return (
             <textarea
+                ref="field"
                 className={`Form__input ${this.props.className}`}
                 name={this.props.name}
                 {...this.props}
