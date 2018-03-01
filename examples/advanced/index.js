@@ -7,7 +7,6 @@ class Advanced extends Component {
         super(props);
     }
 
-
     resetForm() {
         this.refs.form.reset();
     }
@@ -33,7 +32,7 @@ class Advanced extends Component {
 
                 <Form.Group>
                     <Form.Label>
-                        <Form.Input type="radio" name="risk" value="high"/> High
+                        <Form.Input type="radio" name="risk" value="high" defaultChecked/> High
                     </Form.Label>
                     <br/>
                     <Form.Label>
