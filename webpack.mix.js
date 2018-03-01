@@ -10,7 +10,8 @@ const examples = [
     'advanced_control',
     'select',
     'radio',
-    'textarea'
+    'textarea',
+    'file'
 ];
 
 examples.map(example => {

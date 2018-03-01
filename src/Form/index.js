@@ -32,7 +32,11 @@ export default class Form extends Component {
             fields[field.name] = field.checked;
         }
 
-        if (field.type !== 'checkbox') {
+        if (field.type === 'file') {
+            fields[field.name] = field.files;
+        }
+
+        if (['checkbox', 'file'].indexOf(field.type) === -1) {
             fields[field.name] = field.value;
         }
 
