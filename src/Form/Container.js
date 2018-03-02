@@ -31,7 +31,7 @@ export default class Container extends Component {
             return null;
         }
 
-        return <Form {...this.props} reset={this.reset}/>;
+        return <Form ref="form" {...this.props} reset={this.reset}/>;
     }
 }
 
