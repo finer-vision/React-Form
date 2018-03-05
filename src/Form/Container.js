@@ -31,15 +31,15 @@ export default class Container extends Component {
     }
 
     getErrors() {
-        this.refs.form.getErrors();
+        return this.refs.form.getErrors();
     }
 
     getData() {
-        this.refs.form.getData();
+        return this.refs.form.getData();
     }
 
     getForm() {
-        this.refs.form.getForm();
+        return this.refs.form.getForm();
     }
 
     render() {
