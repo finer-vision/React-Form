@@ -42,6 +42,10 @@ export default class Container extends Component {
         return this.refs.form.getForm();
     }
 
+    getValidation() {
+        return this.refs.form.getValidation();
+    }
+
     render() {
         if (!this.state.mount) {
             return null;

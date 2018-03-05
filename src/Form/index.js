@@ -71,6 +71,13 @@ export default class Form extends Component {
         };
     }
 
+    getValidation() {
+        if (!this.props.rules) {
+            return null;
+        }
+        return this.validation.validate(this.state.fields, this.props.rules, this.props.messages);
+    }
+
     submit() {
         const form = this.getForm();
 

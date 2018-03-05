@@ -1,6 +1,6 @@
 {
   "name": "fv-react-form",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "Flexible React form with validation.",
   "main": "build/index.js",
   "repository": {
