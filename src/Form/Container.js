@@ -26,6 +26,22 @@ export default class Container extends Component {
         this.setState({mount: false}, () => this.setState({mount: true}));
     }
 
+    submit() {
+        this.refs.form.submit();
+    }
+
+    getErrors() {
+        this.refs.form.getErrors();
+    }
+
+    getData() {
+        this.refs.form.getData();
+    }
+
+    getForm() {
+        this.refs.form.getForm();
+    }
+
     render() {
         if (!this.state.mount) {
             return null;
