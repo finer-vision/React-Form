@@ -23,9 +23,7 @@ export default class Field extends Component {
         Util.removeListeners(this.listeners);
     }
 
-    updateForm() {
-        const field = this.getField();
-
+    updateForm(field) {
         this.form.handleChange(field);
 
         if (this.props.onChange) {
