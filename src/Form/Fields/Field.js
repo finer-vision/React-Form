@@ -31,7 +31,7 @@ export default class Field extends Component {
         }
     }
 
-    updateField() {
+    getField() {
         const field = {
             name: this.props.name,
             type: this.props.type,
@@ -68,13 +68,18 @@ export default class Field extends Component {
                 this.updateForm(field);
             }
 
-            return;
+            return field;
         }
 
         if (field.type !== 'checkbox' && field.type !== 'radio') {
             field.value = this.state.value;
         }
 
+        return field;
+    }
+
+    updateField() {
+        const field = this.getField();
         this.updateForm(field);
     }
 }
