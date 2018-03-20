@@ -23,7 +23,9 @@ export default class Field extends Component {
         Util.removeListeners(this.listeners);
     }
 
-    updateForm(field) {
+    updateForm() {
+        const field = this.getField();
+
         this.form.handleChange(field);
 
         if (this.props.onChange) {
@@ -53,19 +55,16 @@ export default class Field extends Component {
 
             if (this.props.defaultChecked) {
                 field.value = this.props.value;
-                this.updateForm(field);
-                return;
+                return field;
             }
 
             if (formValue === undefined) {
                 field.value = this.state.value;
-                this.updateForm(field);
-                return;
+                return field;
             }
 
             if (this.state.value !== '') {
                 field.value = this.state.value;
-                this.updateForm(field);
             }
 
             return field;
