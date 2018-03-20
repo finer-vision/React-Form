@@ -31,6 +31,53 @@ export default class Field extends Component {
         }
     }
 
+    updateField() {
+        const field = {
+            name: this.props.name,
+            type: this.props.type,
+            formId: this.form.id
+        };
+
+        if (field.type === 'checkbox') {
+            field.checked = this.state.checked;
+        }
+
+        if (field.type === 'file') {
+            field.files = this.state.files;
+        }
+
+        // Handle updating of radio fields that have the same name.
+        // TODO: Add tests and refactor.
+        if (field.type === 'radio') {
+            const formValue = this.form.getData(field.name);
+
+            if (this.props.defaultChecked) {
+                field.value = this.props.value;
+                this.updateForm(field);
+                return;
+            }
+
+            if (formValue === undefined) {
+                field.value = this.state.value;
+                this.updateForm(field);
+                return;
+            }
+
+            if (this.state.value !== '') {
+                field.value = this.state.value;
+                this.updateForm(field);
+            }
+
+            return;
+        }
+
+        if (field.type !== 'checkbox' && field.type !== 'radio') {
+            field.value = this.state.value;
+        }
+
+        this.updateForm(field);
+    }
+
     getField() {
         const field = {
             name: this.props.name,
@@ -73,11 +120,6 @@ export default class Field extends Component {
         }
 
         return field;
-    }
-
-    updateField() {
-        const field = this.getField();
-        this.updateForm(field);
     }
 }
 
